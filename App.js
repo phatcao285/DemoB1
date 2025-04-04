@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
+import Cat from './Cat';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Cat name="Munkustrap" />
+        <Cat name="Spot" />
+      </ScrollView>
       <StatusBar style="auto" />
     </View>
   );
@@ -14,7 +18,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  scrollContainer: {
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 50,
   },
 });
